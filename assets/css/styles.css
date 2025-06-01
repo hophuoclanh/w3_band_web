@@ -1,24 +1,18 @@
 * {
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;   
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html {
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    font-family: 'Lato', sans-serif;
 }
 
-/*
-1. Từ ngoài vào trong
-2. Từ trên xuống dưới
-3. Tổng quan đến chi tiết
-*/
-
-/*
+/* 
 1. Vị trí
 2. Kích thước
 3. Màu sắc
-4. Kiểu dáng (kiểu chữ, hình tròn, vuông, ...)
+4. Kiểu dáng
 */
 
 #main {
@@ -28,65 +22,114 @@ html {
 #header {
     height: 46px;
     background-color: #000;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#search {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+#search:hover {
+    background-color: #f44336;
+    height: 46px;
+}
+
+#search img {
+    width: 17px;
+    height: 22px;
 }
 
 #nav {
-
+    display: flex; /* to keep nav items in a row */
+    list-style: none;
 }
 
 #nav li {
     display: inline-block;
-    position: relative;
-}
-
-#nav > li > a {
-    color: #fff;
-    text-decoration: none;
-    line-height: 46px;
-    padding: 0 24px;
-    display: inline-block;
-}
-
-#nav > li:hover > a {
-    background-color: #333;
-}
-
-
-#nav li:hover a {
-    background-color: #fff;
-    color: black
 }
 
 #nav .subnav {
-    position: absolute;
     display: none;
-    min-width: 160px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 #nav li:hover .subnav {
     display: block;
+    background-color: white;
 }
 
-#nav .subnav li {
-    width: 100%;
-}
-
-#nav .subnav a {
-    display: block;
-    padding: 12px 16px;
-    color: #000;
-    text-decoration: none;
-}
-
-#nav .subnav a:hover {
+#nav .subnav li:hover {
     background-color: #ccc;
 }
 
+#nav .subnav li {
+    display: block;
+}
+
+#nav .subnav li a {
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    box-sizing: content-box;
+    min-width: 128px;
+    text-decoration: none;
+    height: 22.5px;
+} 
+
+#nav > li > a {
+    color: white;
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; 
+    text-transform: uppercase
+}
+
+#nav > li:hover > a {
+    color: black;
+    background-color: #ccc;
+}
+
+.icon.hover {
+    display: none;
+}
+
+.icon.default {
+    width: 12px;
+    height: 12px;
+}
+
+.icon.default,
+.icon.hover {
+    width: 12px;
+    height: 12px;
+}
+
+#nav > li:hover .icon.default {
+    display: none;
+}
+
+#nav > li:hover .icon.hover {
+    display: inline;
+    width: 12px;
+    height: 12px;
+}
+
 #slider {
-    min-height: 500px;
+    height: 600px;
     background-color: #333;
 }
 
@@ -97,3 +140,4 @@ html {
 #footer {
 
 }
+
