@@ -134,7 +134,7 @@ body {
 
 #slider {
     margin-top: 46px;
-    height: 1000px;
+    max-height: 1000px;
     overflow: hidden;
     position: relative;
 }
@@ -178,8 +178,62 @@ body {
 }
 
 #content {
-    height: 600px;
+    height: 675px;
     background-color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+    width: 70%; 
+    margin: 0 auto;
+    padding: 64px 0;
+    flex-direction: column;
+    align-items: center; 
+}
+
+#content .main-content {
+}
+
+#content .main-content .header {
+    font-size: 30px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+#content .main-content .subtext {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.5;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+#content .main-content .text-description {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+#content .images {
+    display: flex; 
+    gap: 100px;
+    padding: 32px 32px;     
+}
+
+#content .images .image p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#content .images .image img {
+    width: 154px;
+    height: 154px;
 }
 
 #footer {
