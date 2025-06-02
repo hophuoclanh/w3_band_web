@@ -177,24 +177,28 @@ body {
     to { opacity: 1; }
 }
 
-#content {
-    height: 675px;
+.content-section {
+    max-width: 800px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* about section */
+
+#about-section {
     background-color: #fff;
     display: flex;
     justify-content: center;
-    text-align: center;
-    max-width: 800px;
-    width: 70%; 
-    margin: 0 auto;
     padding: 64px 0;
     flex-direction: column;
     align-items: center; 
 }
 
-#content .main-content {
+#about-section .content-section {
 }
 
-#content .main-content .header {
+#about-section .content-section .header {
     font-size: 30px;
     font-family: "Segoe UI", Arial, sans-serif;
     margin-top: 10px;
@@ -204,15 +208,15 @@ body {
     text-align: center;
 }
 
-#content .main-content .subtext {
+#about-section .content-section .subtext {
     font-style: italic;
     font-size: 15px;
     line-height: 1.5;
     opacity: 0.6;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
-#content .main-content .text-description {
+#about-section .content-section .text-description {
     font-size: 15px;
     line-height: 1.5;
     margin-top: 15px;
@@ -220,21 +224,185 @@ body {
     text-align: justify;
 }
 
-#content .images {
+#about-section .images {
     display: flex; 
     gap: 100px;
     padding: 32px 32px;     
 }
 
-#content .images .image p {
+#about-section .images .image p {
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-#content .images .image img {
+#about-section .images .image img {
     width: 154px;
     height: 154px;
+    border-radius: 5px;
 }
+
+/* ticket section */
+#ticket-section {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 86px;
+    padding-bottom: 96px;
+}
+
+#ticket-section .content-section .header {
+    font-size: 30px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-align: center;
+    color: white
+}
+
+#ticket-section .content-section .subtext {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.5;
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+    color: white;
+    margin-bottom: 42px;
+}
+
+#ticket-section .ticket-list {
+    background-color: #fff;
+    width: 766px;
+}
+
+#ticket-section .ticket-list li {
+    font-size: 15px;
+    padding: 8px 16px;
+    color: gray;
+    list-style-type: none;
+}
+
+#ticket-section .ticket-list li {
+    font-size: 15px;
+    padding: 8px 16px;
+    color: gray;
+    list-style-type: none;
+    border-bottom: #ddd solid 1px;
+}
+
+#ticket-section .ticket-list li .sold {
+    color: white;
+    background-color: #f44336;
+    padding: 2px 8px;
+    margin-left: 16px;
+}
+
+#ticket-section .ticket-list li .quantity {
+    color: white;
+    background-color: black;
+    padding: 2px 8px;
+    border-radius: 50%;;
+    float: right;
+    text-align: center;
+    margin-top: -2px;
+}
+
+#ticket-section .place-list {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+}
+
+#ticket-section .place-list div {
+    background-color: #fff;
+    width: 245px;
+}
+
+#ticket-section .place-list img {
+    width: 245px;
+    height: 184px;
+    display: block;
+}
+
+#ticket-section .place-list span {
+    display: block;
+    width: 213px; 
+}
+
+#ticket-section .place-list .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#ticket-section .place-list .place {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: bolder;
+}
+
+#ticket-section .place-list .date {
+    margin-top: 15px;
+    opacity: 0.60;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+#ticket-section .place-list .desc {
+    margin: 15px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+#ticket-section .place-list .buy {
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    width: fit-content;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    align-self: flex-start;
+    font-size: 15px;
+}
+
+#ticket-section .place-list .buy:hover {
+    background-color: #ccc;
+    color: black;
+    cursor: pointer;
+}
+
+/* contact-section */
+/* #contact-section {
+    height: auto;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 64px 0;
+    flex-direction: column;
+    align-items: center; 
+}
+
+#contact-section .content-section .header {
+    font-size: 30px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+#contact-section .content-section .subtext {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.5;
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+} */
 
 #footer {
 
