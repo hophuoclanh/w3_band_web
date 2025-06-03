@@ -132,6 +132,7 @@ body {
     height: 12px;
 }
 
+/* Slider */
 #slider {
     margin-top: 46px;
     max-height: 1000px;
@@ -227,12 +228,13 @@ body {
 #about-section .images {
     display: flex; 
     gap: 100px;
-    padding: 32px 32px;     
+    padding: 32px 32px;
 }
 
 #about-section .images .image p {
     margin-top: 15px;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 #about-section .images .image img {
@@ -326,6 +328,10 @@ body {
     display: block;
 }
 
+#ticket-section .place-list img:hover {
+    filter: brightness(60%);
+}
+
 #ticket-section .place-list span {
     display: block;
     width: 213px; 
@@ -376,12 +382,13 @@ body {
 }
 
 /* contact-section */
-/* #contact-section {
+#contact-section {
     height: auto;
     background-color: #fff;
     display: flex;
     justify-content: center;
-    padding: 64px 0;
+    padding-top: 86px;
+    padding-bottom: 96px;
     flex-direction: column;
     align-items: center; 
 }
@@ -402,7 +409,89 @@ body {
     line-height: 1.5;
     opacity: 0.6;
     letter-spacing: 0.5px;
-} */
+}
+
+#contact-section .form {
+    display: flex;
+    width: 768px;
+    margin: 32px
+}
+
+#contact-section .form .info {
+    width: 384px;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+#contact-section .form .info li {
+    list-style-type: none;
+}
+
+#contact-section .form .info li img {
+    height: 18px;
+    margin-right: 10px;
+    margin-top: 1px;
+    transform: translateY(2px);
+}
+
+#contact-section .form .info li:first-of-type img {
+    transform: translateY(0) !important
+}
+
+.form-container {
+
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form .row {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 15px;
+  height: 40px;
+}
+
+.contact-form input[type="message"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 15px;
+  height: 40px;
+}
+
+.contact-form button {
+  align-self: flex-end;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+.contact-form button:hover {
+  background-color: #ccc;
+  color: black;
+}
+
+.image-section img {
+    height: 660px;
+    width: 100%;
+    object-fit: cover;
+}
 
 #footer {
 
