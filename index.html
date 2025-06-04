@@ -12,13 +12,13 @@
 <body>
     <div id="main">
         <div id="header">
+            <li><a href="#slider">Home</a></li>
             <ul id="nav">
-                <li><a href="">Home</a></li>
-                <li><a href="">Band</a></li>
-                <li><a href="">Tour</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#about-section">Band</a></li>
+                <li><a href="#ticket-section">Tour</a></li>
+                <li><a href="#contact-section">Contact</a></li>
                 <li>
-                    <a href="#">
+                    <a href="">
                         More
                         <img src="assets/svg/dropdown-svgrepo-com-white.svg" class="icon default">
                         <img src="assets/svg/dropdown-svgrepo-com-black.svg" class="icon hover">
@@ -31,9 +31,14 @@
                 </li>
             </ul>
             <div id="search">
-                <a href="#">
+                <a href="">
                     <img src="assets/svg/find-svgrepo-com.svg" alt="Search Icon">
                 </a>
+            </div>
+            <div id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
         <div id="slider">
@@ -154,12 +159,13 @@
                     </ul>
                 </div>
                 <div class="form-container">
-                    <form class="contact-form">
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="14c8b97d-cb60-407d-90b2-46929098b0df">
                         <div class="row">
-                            <input type="text" placeholder="Name" required>
-                            <input type="email" placeholder="Email" required>
+                            <input name="name" type="text" placeholder="Name" required>
+                            <input name="email" type="email" placeholder="Email" required>
                         </div>
-                        <input type="message" placeholder="Message" required>
+                        <textarea name="message" placeholder="Message" required></textarea>
                         <button type="submit">SEND</button>
                     </form>
                 </div>
@@ -173,5 +179,13 @@
         </div>
     </div>
     <script src="assets/js/slideshow.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
