@@ -105,9 +105,9 @@
             </div>
             <div class="ticket-list">
                 <ul>
-                    <li>September <span class="sold">Sold out</span></li>
-                    <li>October <span class="sold">Sold out</span></li>
-                    <li>November <span class="quantity">3</span></li>
+                    <li>September <span id="ny-tickets"></span></li>
+                    <li>October <span id="paris-tickets"></span></li>
+                    <li>November <span id="sf-tickets"></span></li>
                 </ul>
             </div>
             <div class="place-list">
@@ -235,7 +235,9 @@
             if (event.target === modal) {
             modal.style.display = 'none';
         }
-  });
+        });
     </script>
+
+    <script src="assets/js/buy.js"></script>
 </body>
 </html>
