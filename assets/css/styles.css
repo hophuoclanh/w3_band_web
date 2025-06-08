@@ -799,7 +799,7 @@ html {
 
     #ticket-section .ticket-list {
         background-color: #fff;
-        width: 90%;
+        width: 90vw;
     }
 
     #ticket-section .place-list {
@@ -810,12 +810,12 @@ html {
     }
 
     #ticket-section .place-list div {
-        width: 86vw;
+        width: 90vw;
     }
 
     #ticket-section .place-list img {
-        width: 86vw;
-        height: 261px;
+        width: 90vw;
+        height: 66vw;
     }
 
     #ticket-section .place-list .content {
@@ -824,7 +824,7 @@ html {
     }
 
     #ticket-section .place-list span {
-        width: 310px; 
+        width: 80vw;
     }
 
     #ticket-section .place-list .desc {
