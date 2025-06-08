@@ -4,7 +4,7 @@ async function loadTicketInventory() {
 
   for (const city of cities) {
     try {
-      const res = await fetch(`http://localhost:3001/available/${city}`);
+      const res = await fetch(`/api/available?city=${encodeURIComponent(city)}`);
       const data = await res.json();
       const elementId = `${city.toLowerCase().replace(/ /g, '-')}-tickets`;
       const element = document.getElementById(elementId);
@@ -24,10 +24,10 @@ document.querySelector('#buy-tickets').addEventListener('click', async () => {
   const email = document.querySelectorAll('.modal-input')[1].value;
   const city = 'New York'; // Replace later if dynamic modal is added
 
-  const res = await fetch('http://localhost:3001/buy-ticket', {
+  const res = await fetch('/api/buy-ticket', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ city, email, quantity }),
+    body: JSON.stringify({ city, email, quantity })
   });
 
   const data = await res.json();

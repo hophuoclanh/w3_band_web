@@ -12,12 +12,17 @@
 <body>
     <div id="main">
         <div id="header">
-            <ul id="nav">
+            <div id="home-item">
                 <li><a href="#slider">Home</a></li>
+            </div>
+
+            <div id="hamburger">&#9776;</div> <!-- ☰ icon -->
+
+            <ul id="nav">
                 <li><a href="#about-section">Band</a></li>
                 <li><a href="#ticket-section">Tour</a></li>
                 <li><a href="#contact-section">Contact</a></li>
-                <li>
+                <li class="has-subnav">
                     <a href="">
                         More
                         <img src="assets/svg/dropdown-svgrepo-com-white.svg" class="icon default">
@@ -239,5 +244,26 @@
     </script>
 
     <script src="assets/js/buy.js"></script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        // Toggle show/hide nav
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+
+        // ✅ Close nav when a link is clicked (mobile only)
+        const navLinks = nav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Only close if the menu is visible (mobile)
+                if (window.innerWidth <= 768) {
+                    nav.classList.remove('show');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
