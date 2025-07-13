@@ -1,9 +1,24 @@
+// pages/index.js
+import { useState } from 'react';
 import Head from 'next/head';
-import Script from 'next/script';
+import Slideshow from '../components/Slideshow';
+import TicketModal from '../components/TicketModal';
 
 export default function Home() {
+  const [modalCity, setModalCity] = useState(null);
+
+  const places = [
+    { name: 'New York', date: 'Fri 27 Nov 2016', img: '/img/newyork.jpg' },
+    { name: 'Paris', date: 'Sat 28 Nov 2016', img: '/img/paris.jpg' },
+    { name: 'San Francisco', date: 'Sun 29 Nov 2016', img: '/img/sanfran.jpg' }
+  ];
+
   return (
     <>
+      <Head>
+        <title>Band Website</title>
+      </Head>
+
       <div id="main">
         <div id="header">
           <ul id="home-item">
@@ -36,39 +51,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="slider">
-          <div className="slideshow-container">
-            <div className="mySlides fade">
-              <img src="/img/la.jpg" style={{ width: '100%', objectFit: 'cover' }} alt="LA" />
-              <div className="content">
-                <div className="text">Los Angeles</div>
-                <div className="subtext">We had the best time playing at Venice Beach!</div>
-              </div>
-            </div>
-
-            <div className="mySlides fade">
-              <img src="/img/ny.jpg" style={{ width: '100%', objectFit: 'cover' }} alt="NY" />
-              <div className="content">
-                <div className="text">New York</div>
-                <div className="subtext">The atmosphere in New York is lorem ipsum.</div>
-              </div>
-            </div>
-
-            <div className="mySlides fade">
-              <img src="/img/chicago.jpg" style={{ width: '100%', objectFit: 'cover' }} alt="Chicago" />
-              <div className="content">
-                <div className="text">Chicago</div>
-                <div className="subtext">Thank you, Chicago - A night we won't forget</div>
-              </div>
-            </div>
-          </div>
-
-          <div style={{ textAlign: 'center' }}>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-          </div>
-        </div>
+        <Slideshow />
 
         <div id="about-section">
           <div className="content-section">
@@ -102,11 +85,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="place-list">
-            {[
-              { name: 'New York', date: 'Fri 27 Nov 2016', img: '/img/newyork.jpg' },
-              { name: 'Paris', date: 'Sat 28 Nov 2016', img: '/img/paris.jpg' },
-              { name: 'San Francisco', date: 'Sun 29 Nov 2016', img: '/img/sanfran.jpg' }
-            ].map((place, i) => (
+            {places.map((place, i) => (
               <div key={i}>
                 <img src={place.img} alt={place.name} />
                 <div className="content">
@@ -114,7 +93,7 @@ export default function Home() {
                   <span className="date"> {place.date} </span>
                   <span className="desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</span>
                 </div>
-                <span className="buy"> Buy Tickets </span>
+                <span className="buy" onClick={() => setModalCity(place.name)}>Buy Tickets</span>
               </div>
             ))}
           </div>
@@ -154,62 +133,9 @@ export default function Home() {
         <div id="footer"></div>
       </div>
 
-      <div className="modal">
-        <div className="modal-container">
-          <header className="modal-header">
-            <img src="/svg/luggage-14-svgrepo-com.svg" alt="Icon" />
-            <span>Tickets</span>
-            <div className="modal-close">
-              <img src="/svg/close-svgrepo-com-white.svg" alt="Close" className="icon default" />
-              <img src="/svg/close-svgrepo-com-black.svg" alt="Close" className="icon hover" />
-            </div>
-          </header>
-          <div className="modal-body">
-            <label className="modal-label">
-              <img src="/svg/cart-svgrepo-com.svg" alt="Luggage" />
-              Tickets, $15 per person
-            </label>
-            <input type="number" className="modal-input" id="ticket-quantity" placeholder="How many?" required />
-
-            <label className="modal-label">
-              <img src="/svg/account-svgrepo-com.svg" alt="Account" />
-              Send to
-            </label>
-            <input type="email" className="modal-input" id="ticket-email" placeholder="Enter email" required />
-
-            <div id="buy-tickets">
-              PAY
-              <img src="/svg/tick-svgrepo-com-white.svg" alt="Tick" className="icon default" />
-              <img src="/svg/tick-svgrepo-com-black.svg" alt="Tick" className="icon hover" />
-            </div>
-            <footer className="modal-footer">
-              <p className="modal-help">
-                Need <a href="">help?</a>
-              </p>
-            </footer>
-          </div>
-        </div>
-      </div>
-
-      {/* Scripts */}
-      <Script src="/js/slideshow.js" strategy="afterInteractive" />
-      <Script src="/js/buy.js" strategy="afterInteractive" />
-      <Script strategy="afterInteractive">{`
-        const hamburger = document.getElementById('hamburger');
-        const nav = document.getElementById('nav');
-        hamburger?.addEventListener('click', () => {
-          nav.classList.toggle('show');
-        });
-        const navLinks = nav?.querySelectorAll('a');
-        navLinks?.forEach(link => {
-          link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-              nav.classList.remove('show');
-            }
-          });
-        });
-      `}</Script>
+      {modalCity && (
+        <TicketModal city={modalCity} onClose={() => setModalCity(null)} />
+      )}
     </>
   );
 }
-
