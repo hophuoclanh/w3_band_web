@@ -10,7 +10,6 @@ document.querySelectorAll('.buy').forEach(button => {
   });
 });
 
-// Bấm nút "PAY"
 document.getElementById('buy-tickets').addEventListener('click', async () => {
   const quantity = parseInt(document.getElementById('ticket-quantity').value);
   const email = document.getElementById('ticket-email').value;
